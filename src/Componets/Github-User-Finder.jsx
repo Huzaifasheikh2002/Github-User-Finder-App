@@ -48,29 +48,51 @@ const GithubUsersfind = () => {
 
   }
   return (<>
+  <h1></h1>
     <section className='box1'>
 
       <section className='box2'>
 
-        <div className='inputBox'>
-          <form onSubmit={handleForm}>
+        {/*  */}
+        <nav className="navbar bg-light">
+  <div className="container-fluid">
+    <a className="navbar-brand ">GitHub User Finder</a>
+    <form  onSubmit={handleForm} className="d-flex" role="search">
+      <input autoFocus value={inputValue}
+              onChange={(e) => {
+                SetinputValue(e.target.value);
+              }} className="form-control me-2 " type="search"
+               placeholder="Search" aria-label="Search"/>
+      <button className="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
+        {/*  */}
+{/* 
+    
+          <form onSubmit={handleForm}>
+            <div className='input'>
             <input type="text" placeholder='Enter Github Username'
               value={inputValue}
               onChange={(e) => {
                 SetinputValue(e.target.value);
-              }}
+              }} 
             />
+            </div>
           </form>
-        </div>
+         */}
 
       </section>
       {error === false ? (
 
         <section className='cardWrapper'>
+          <div className='ProfileImg'>
           <img src={userInfo ? userInfo.avatar_url : profile1} />
+          </div>
           <div className='profileListing'>
             <ul>
+              
               <li>Name:{userInfo ? userInfo.name : "User Name"}</li>
               <li>Bio:{userInfo ? userInfo.bio : "User Bio"}</li>
               <li>Followers:{userInfo ? userInfo.followers : "User Followers"}</li>
