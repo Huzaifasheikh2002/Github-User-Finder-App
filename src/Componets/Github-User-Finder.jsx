@@ -18,7 +18,7 @@ const GithubUsersfind = () => {
         setError(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setError(true)
       });
 
